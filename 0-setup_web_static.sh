@@ -10,7 +10,7 @@ sudo sh -c 'echo "Holberton school by maged" >/data/web_static/releases/test/ind
 
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
-sudo sh -c 'echo "\
+sudo sh -c 'echo "
 server {
     listen 80;
     add_header X_Served_by \$HOSTNAME;
