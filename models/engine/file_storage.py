@@ -33,7 +33,7 @@ class FileStorage:
             json.dump(temp, f)
 
     def reload(self):
-        """Loads storage dictionary from file"""
+        """Load storage dictionary from file."""
         from models.base_model import BaseModel
         from models.user import User
         from models.place import Place
@@ -57,7 +57,7 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
-        """delete object"""
+        """Delete object."""
         if obj is not None:
             FileStorage.__objects.pop(
                 obj.to_dict()['__class__'] + '.' + obj.id)
@@ -65,4 +65,4 @@ class FileStorage:
 
     def close(self):
         """Call reload() method for deserializing the JSON file to objects."""
-        self.reload() # deserializing the JSON file to objects
+        self.reload()
