@@ -2,6 +2,7 @@
 """Flask web application."""
 
 from flask import Flask
+from markupsafe import escape
 app = Flask(__name__)
 
 
@@ -20,7 +21,7 @@ def hbnb():
 @app.route("/c/<text>", strict_slashes=False)
 def c(text):
     """C is fun."""
-    return "C {}".format(text.replace("_", " "))
+    return f"C {escape(text.replace('_', ' '))}"
 
 
 if __name__ == '__main__':

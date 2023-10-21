@@ -31,5 +31,13 @@ def python(text="is cool"):
     return f"Python {escape(text.replace('_', ' '))}"
 
 
+@app.route("/number", strict_slashes=False)
+@app.route("/number/<n>", strict_slashes=False)
+def number(n):
+    """Route Number."""
+    return f"{escape(n)} is a number"
+
+
 if __name__ == '__main__':
     app.run()
+
