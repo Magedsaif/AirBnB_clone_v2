@@ -32,7 +32,7 @@ def python(text="is cool"):
 
 
 @app.route("/number", strict_slashes=False)
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
     """Route Number."""
     return f"{escape(n)} is a number"
