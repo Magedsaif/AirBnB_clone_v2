@@ -4,22 +4,22 @@
 from flask import Flask, render_template
 from models import storage
 from models.state import State
-from models.city import City
 
 
 app = Flask(__name__)
 
 
-@app.route("/states", strict_slashes=False)
+@app.route('/states')
 def states():
-    """states_list."""
-    states = storage.all(State)
-    return render_template('7-states_list.html', states=states)
+    """States route."""
+    data = storage.all(State)
+    return render_template("9-states.html",
+                           states=data)
 
 
 @app.route('/states/<id>')
 def states_by_id(id):
-    """States_by_id."""
+    """States_by_id route."""
     obj = None
     notfound = True
     for state in storage.all(State).values():
