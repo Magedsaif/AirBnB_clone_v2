@@ -13,6 +13,7 @@ def states_list():
     states = storage.all("State")
     return render_template('7-states_list.html', states=states)
 
+
 @app.teardown_appcontext
 def teardown_db(exception):
     """Close the storage."""
